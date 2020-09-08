@@ -1,0 +1,28 @@
+{
+  "name": "examscanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout=10000",
+    "format": "prettier --write **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotba/ExamScanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rotba/Check/issues"
+  },
+  "homepage": "https://github.com/rotba/Check#readme",
+  "devDependencies": {
+    "@firebase/testing": "^0.19.2",
+    "mocha": "5.2.0",
+    "prettier": "1.15.2"
+  }
+}

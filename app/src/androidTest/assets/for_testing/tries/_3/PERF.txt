@@ -1,0 +1,7 @@
+I/System.out: Q#22:	 EXP:1, ACT:5
+I/System.out: Q#23:	 EXP:2, ACT:5
+I/System.out: Q#24:	 EXP:3, ACT:5
+I/System.out: Q#45:	 EXP:4, ACT:2
+I/System.out: Q#46:	 EXP:5, ACT:2
+I/System.out: Q#50:	 EXP:4, ACT:3
+I/System.out: RESOLVED#50:	 CORRECTLY_RESOLVED:44, WRONG_RESOLVED:6

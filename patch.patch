@@ -1,0 +1,152 @@
+diff --git a/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmAbstractTest.java b/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmAbstractTest.java
+index 91dce77..6c2d922 100644
+--- a/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmAbstractTest.java
++++ b/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmAbstractTest.java
+@@ -48,6 +48,7 @@ public abstract class CoreAlgorithmAbstractTest extends AbstractComponentInstrum
+     public void setUp() {
+         RemoteDatabaseFacadeFactory.setStubInstance(new RemoteDatabaseStubInstance());
+         RemoteFilesManagerFactory.setStubInstabce(new RemoteFilesManagerStub());
++        FilesManagerFactory.setStubInstance(new FilesManagerStub());
+         super.setUp();
+         useCaseContext = getUseCaseContext();
+         useCaseContext.setup();
+diff --git a/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmJPGTest.java b/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmJPGTest.java
+index c3214a6..6316640 100644
+--- a/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmJPGTest.java
++++ b/app/src/androidTest/java/com/example/examscanner/core_algorithm/CoreAlgorithmJPGTest.java
+@@ -1,16 +1,11 @@
+ package com.example.examscanner.core_algorithm;
+ 
+-import com.example.examscanner.communication.CommunicationFacadeFactory;
+-import com.example.examscanner.communication.RealFacadeImple;
+ import com.example.examscanner.components.scan_exam.BitmapsInstancesFactoryAndroidTest;
+ import com.example.examscanner.components.scan_exam.detect_corners.CornerDetectionViewModel;
+-import com.example.examscanner.persistence.local.files_management.FilesManagerFactory;
+-import com.example.examscanner.stubs.FilesManagerStub;
+ import com.example.examscanner.use_case_contexts_creators.CornerDetectionContext2Setuper;
+ 
+ import org.jetbrains.annotations.NotNull;
+ import org.junit.Before;
+-import org.junit.Rule;
+ import org.junit.Test;
+ 
+ import static org.junit.Assert.assertEquals;
+@@ -22,11 +17,8 @@ public class CoreAlgorithmJPGTest extends CoreAlgorithmAbstractTest {
+     private CornerDetectionViewModel out;
+ 
+ 
+-
+     @Before
+-    public void setUp() {
+-        FilesManagerFactory.setStubInstance(new FilesManagerStub());
+-    }
++    public void setUp() {}
+ 
+     public void lateSetup() {
+         super.setUp();
+diff --git a/app/src/main/java/com/example/examscanner/communication/RealFacadeImple.java b/app/src/main/java/com/example/examscanner/communication/RealFacadeImple.java
+index f68c1fa..c09c136 100644
+--- a/app/src/main/java/com/example/examscanner/communication/RealFacadeImple.java
++++ b/app/src/main/java/com/example/examscanner/communication/RealFacadeImple.java
+@@ -41,7 +41,6 @@ import org.jetbrains.annotations.NotNull;
+ 
+ import java.io.FileNotFoundException;
+ import java.io.IOException;
+-import java.nio.file.Files;
+ import java.util.ArrayList;
+ import java.util.HashMap;
+ import java.util.List;
+diff --git a/app/src/main/java/com/example/examscanner/persistence/local/files_management/FilesManagerFactory.java b/app/src/main/java/com/example/examscanner/persistence/local/files_management/FilesManagerFactory.java
+index 716abfa..204f959 100644
+--- a/app/src/main/java/com/example/examscanner/persistence/local/files_management/FilesManagerFactory.java
++++ b/app/src/main/java/com/example/examscanner/persistence/local/files_management/FilesManagerFactory.java
+@@ -1,33 +1,19 @@
+ package com.example.examscanner.persistence.local.files_management;
+ 
+ import android.content.Context;
+-import android.util.Log;
+ 
+ import com.example.examscanner.communication.ContextProvider;
+ import com.example.examscanner.communication.RealFacadeImple;
+-import com.example.examscanner.stubs.FilesManagerStub;
+ 
+ import org.jetbrains.annotations.NotNull;
+ 
+ public class FilesManagerFactory {
+     private static boolean testMode = false;
+-    private static boolean QAD_testMode = true;
+     private static FilesManager instance;
+     public static FilesManager create(){
+-        if(QAD_testMode){
+-            Log.d("ExamScanner", "DONT GORGET ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+-            return getStubInstance();
+-        }
+         return getRealInstance();
+     }
+ 
+-    private static FilesManager getStubInstance() {
+-        if(instance == null){
+-            instance = new FilesManagerStub();
+-        }
+-        return instance;
+-    }
+-
+     private static FilesManager getRealInstance() {
+         if(instance == null){
+             instance = new FilesManagerImpl(ContextProvider.get());
+@@ -48,10 +34,6 @@ public class FilesManagerFactory {
+     }
+ 
+     public static void setStubInstance(FilesManager fm){
+-        if(QAD_testMode){
+-            instance = getStubInstance();
+-        }else{
+-            instance=fm;
+-        }
++        instance=fm;
+     }
+ }
+diff --git a/app/src/main/java/com/example/examscanner/stubs/FilesManagerStub.java b/app/src/main/java/com/example/examscanner/stubs/FilesManagerStub.java
+deleted file mode 100644
+index dbd5409..0000000
+--- a/app/src/main/java/com/example/examscanner/stubs/FilesManagerStub.java
++++ /dev/null
+@@ -1,38 +0,0 @@
+-package com.example.examscanner.stubs;
+-
+-import android.graphics.Bitmap;
+-
+-import com.example.examscanner.persistence.local.files_management.FilesManager;
+-
+-import java.io.FileNotFoundException;
+-import java.io.IOException;
+-import java.util.HashMap;
+-import java.util.Map;
+-
+-public class FilesManagerStub implements FilesManager {
+-    Map<String, Bitmap> map = new HashMap<>();
+-    @Override
+-    public Bitmap get(String id) throws FileNotFoundException {
+-        return map.get(id);
+-    }
+-
+-    @Override
+-    public void store(Bitmap bm, String path) throws IOException {
+-        map.put(path,bm);
+-    }
+-
+-    @Override
+-    public void tearDown() {
+-        map.clear();
+-    }
+-
+-    @Override
+-    public String genId() {
+-        return null;
+-    }
+-
+-    @Override
+-    public void delete(String bitmapPath) {
+-        map.remove(bitmapPath);
+-    }
+-}

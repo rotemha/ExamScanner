@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <Spinner-->
+    <!--        android:id="@+id/spinner_detect_corners_version_num"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:gravity="center"-->
+    <!--        android:hint="@string/detect_corners_version_number_hint"-->
+    <!--        android:inputType="number"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/constraintLayout7"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"-->
+    <!--        app:layout_constraintVertical_bias="0.008"/>-->
+
+    <Button
+        android:id="@+id/button_cd_resolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/scan_exam_button"
+        android:text="@string/resolve_scan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"
+        app:layout_constraintVertical_bias="0.497" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="305dp"
+        android:layout_height="347dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_cd_resolve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2_corner_detected_capture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@drawable/imageview_border"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/constraintLayout_upper_right_container"-->
+        <!--            android:layout_width="90dp"-->
+        <!--            android:layout_height="82dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView_upper_right"-->
+        <!--                android:layout_width="48dp"-->
+        <!--                android:layout_height="42dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.619"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:layout_constraintVertical_bias="0.4"-->
+        <!--                app:srcCompat="@drawable/corner" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/constraintLayout_bottom_left_container"-->
+        <!--            android:layout_width="92dp"-->
+        <!--            android:layout_height="61dp"-->
+        <!--            android:layout_marginBottom="4dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/imageView2_corner_detected_capture">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView_buttom_right"-->
+        <!--                android:layout_width="48dp"-->
+        <!--                android:layout_height="42dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/corner" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/constraintLayout_upper_left_container"-->
+        <!--            android:layout_width="95dp"-->
+        <!--            android:layout_height="100dp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView_upper_left"-->
+        <!--                android:layout_width="48dp"-->
+        <!--                android:layout_height="42dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/corner" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/constraintLayout_bottom_right_container"-->
+        <!--            android:layout_width="91dp"-->
+        <!--            android:layout_height="75dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView_buttom_left"-->
+        <!--                android:layout_width="48dp"-->
+        <!--                android:layout_height="42dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.372"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:layout_constraintVertical_bias="0.484"-->
+        <!--                app:srcCompat="@drawable/corner" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <ProgressBar
+            android:id="@+id/progressBar2_scanning_answers"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

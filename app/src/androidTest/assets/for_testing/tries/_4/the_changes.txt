@@ -1,0 +1,10 @@
+param_LOW_BOUND_BLACKS_COUNTING  = new Scalar(50,50,50)
+param_UPPER_BOUND_BLACKS_COUNTING  = new Scalar(150,150,150)
+
+->
+
+param_LOW_BOUND_BLACKS_COUNTING  = new Scalar(20,20,20)
+param_UPPER_BOUND_BLACKS_COUNTING  = new Scalar(110,110,110)
+
+
+

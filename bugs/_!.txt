@@ -1,0 +1,65 @@
+2020-06-15 12:27:38.234 16243-16243/com.example.examscanner D/DebugExamScanner: done predd on examinee id edittext
+2020-06-15 12:27:48.276 16243-16351/com.example.examscanner D/ExamScanner: starting creating ScannedCapture
+2020-06-15 12:27:48.293 16243-16351/com.example.examscanner D/ExamScanner: inserted 1 solution to the local db
+2020-06-15 12:27:50.647 16243-16243/com.example.examscanner D/ExamScanner: CameraOutputHandlerImpl::onCapturePtocessError
+    java.lang.ArrayIndexOutOfBoundsException: length=100; index=-1
+        at com.example.examscanner.repositories.scanned_capture.ScannedCaptureRepository.create(ScannedCaptureRepository.java:98)
+        at com.example.examscanner.repositories.scanned_capture.ScannedCaptureRepository.create(ScannedCaptureRepository.java:18)
+        at com.example.examscanner.components.scan_exam.capture.CaptureViewModel$1.consume(CaptureViewModel.java:110)
+        at com.example.examscanner.image_processing.ImageProcessor.scanAnswers(ImageProcessor.java:865)
+        at com.example.examscanner.components.scan_exam.capture.CaptureViewModel.processCapture(CaptureViewModel.java:102)
+        at com.example.examscanner.components.scan_exam.capture.CameraOutputHandlerImpl.processCapture(CameraOutputHandlerImpl.java:50)
+        at com.example.examscanner.components.scan_exam.capture.CameraOutputHandlerImpl.lambda$ya4n6iodaR_eMODloGp17B_dR2M(Unknown Source:0)
+        at com.example.examscanner.components.scan_exam.capture.-$$Lambda$CameraOutputHandlerImpl$ya4n6iodaR_eMODloGp17B_dR2M.run(Unknown Source:2)
+        at io.reactivex.internal.operators.completable.CompletableFromAction.subscribeActual(CompletableFromAction.java:34)
+        at io.reactivex.Completable.subscribe(Completable.java:1635)
+        at io.reactivex.internal.operators.completable.CompletableSubscribeOn$SubscribeOnObserver.run(CompletableSubscribeOn.java:64)
+        at io.reactivex.Scheduler$DisposeTask.run(Scheduler.java:452)
+        at io.reactivex.internal.schedulers.ScheduledRunnable.run(ScheduledRunnable.java:61)
+        at io.reactivex.internal.schedulers.ScheduledRunnable.call(ScheduledRunnable.java:52)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:301)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+        at java.lang.Thread.run(Thread.java:764)
+2020-06-15 12:27:59.469 16243-16243/com.example.examscanner D/ExamScanner: CaptureFragment:: onVersionNumbersRetrivedError
+    java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.Spinner.setAdapter(android.widget.SpinnerAdapter)' on a null object reference
+        at com.example.examscanner.components.scan_exam.capture.CaptureFragment.onVersionNumbersRetrived(CaptureFragment.java:385)
+        at com.example.examscanner.components.scan_exam.capture.CaptureFragment.lambda$x3GPTZCd0etvJeMF0tsGE-VhG4k(Unknown Source:0)
+        at com.example.examscanner.components.scan_exam.capture.-$$Lambda$CaptureFragment$x3GPTZCd0etvJeMF0tsGE-VhG4k.accept(Unknown Source:4)
+        at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:60)
+        at io.reactivex.internal.operators.observable.ObservableObserveOn$ObserveOnObserver.drainNormal(ObservableObserveOn.java:200)
+        at io.reactivex.internal.operators.observable.ObservableObserveOn$ObserveOnObserver.run(ObservableObserveOn.java:252)
+        at io.reactivex.android.schedulers.HandlerScheduler$ScheduledRunnable.run(HandlerScheduler.java:109)
+        at android.os.Handler.handleCallback(Handler.java:794)
+        at android.os.Handler.dispatchMessage(Handler.java:99)
+        at android.os.Looper.loop(Looper.java:176)
+        at android.app.ActivityThread.main(ActivityThread.java:6635)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:547)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:823)
+2020-06-15 12:28:20.894 16881-16881/com.example.examscanner D/DebugExamScanner: RemoteDatabaseFacadeImpl::offlineStoreObject SUCCESS
+2020-06-15 12:28:20.967 16881-16881/com.example.examscanner D/DebugExamScanner: RemoteDatabaseFacadeImpl::offlineStoreObject SUCCESS
+2020-06-15 12:28:35.673 16881-17154/com.example.examscanner D/ExamScanner: starting creating ScannedCapture
+2020-06-15 12:28:35.688 16881-17154/com.example.examscanner D/ExamScanner: inserted 2 solution to the local db
+2020-06-15 12:28:37.889 16881-16881/com.example.examscanner D/ExamScanner: CameraOutputHandlerImpl::onCapturePtocessError
+    java.lang.ArrayIndexOutOfBoundsException: length=100; index=-1
+        at com.example.examscanner.repositories.scanned_capture.ScannedCaptureRepository.create(ScannedCaptureRepository.java:98)
+        at com.example.examscanner.repositories.scanned_capture.ScannedCaptureRepository.create(ScannedCaptureRepository.java:18)
+        at com.example.examscanner.components.scan_exam.capture.CaptureViewModel$1.consume(CaptureViewModel.java:110)
+        at com.example.examscanner.image_processing.ImageProcessor.scanAnswers(ImageProcessor.java:865)
+        at com.example.examscanner.components.scan_exam.capture.CaptureViewModel.processCapture(CaptureViewModel.java:102)
+        at com.example.examscanner.components.scan_exam.capture.CameraOutputHandlerImpl.processCapture(CameraOutputHandlerImpl.java:50)
+        at com.example.examscanner.components.scan_exam.capture.CameraOutputHandlerImpl.lambda$ya4n6iodaR_eMODloGp17B_dR2M(Unknown Source:0)
+        at com.example.examscanner.components.scan_exam.capture.-$$Lambda$CameraOutputHandlerImpl$ya4n6iodaR_eMODloGp17B_dR2M.run(Unknown Source:2)
+        at io.reactivex.internal.operators.completable.CompletableFromAction.subscribeActual(CompletableFromAction.java:34)
+        at io.reactivex.Completable.subscribe(Completable.java:1635)
+        at io.reactivex.internal.operators.completable.CompletableSubscribeOn$SubscribeOnObserver.run(CompletableSubscribeOn.java:64)
+        at io.reactivex.Scheduler$DisposeTask.run(Scheduler.java:452)
+        at io.reactivex.internal.schedulers.ScheduledRunnable.run(ScheduledRunnable.java:61)
+        at io.reactivex.internal.schedulers.ScheduledRunnable.call(ScheduledRunnable.java:52)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:301)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+        at java.lang.Thread.run(Thread.java:764)

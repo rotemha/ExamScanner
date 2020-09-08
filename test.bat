@@ -1,0 +1,1 @@
+firebase emulators:exec --only database "npm test"

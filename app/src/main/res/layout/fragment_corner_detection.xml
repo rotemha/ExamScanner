@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView_tmp_curr_image"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.558"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.315"-->
+    <!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/for_testing_fragment_corner_det"
+        android:layout_width="371dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar_detect_corners"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPager2_corner_detected_captures"
+            app:layout_constraintEnd_toEndOf="@+id/viewPager2_corner_detected_captures"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewPager2_corner_detected_captures" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2_corner_detected_captures"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.viewpager2.widget.ViewPager2>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView_cd_current_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="124dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_cd_retake"
+            android:layout_width="107dp"
+            android:layout_height="73dp"
+            android:background="@drawable/scan_exam_button"
+            android:text="@string/retake_scan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_cd_approve"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <Button
+            android:id="@+id/button_cd_approve"
+            android:layout_width="107dp"
+            android:layout_height="73dp"
+            android:background="@drawable/scan_exam_button"
+            android:text="@string/approve_scan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_cd_retake"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+
+        <!--        <Button-->
+        <!--            android:id="@+id/button_cd_nav_to_resolve_answers"-->
+        <!--            android:layout_width="67dp"-->
+        <!--            android:layout_height="62dp"-->
+        <!--            android:layout_gravity="bottom"-->
+        <!--            android:layout_marginEnd="8dp"-->
+        <!--            android:background="@drawable/button_next_step"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/button_cd_approve_and_scan_answers"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/button_cd_approve_and_scan_answers" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView_cd_processing_progress"-->
+        <!--            android:layout_width="53dp"-->
+        <!--            android:layout_height="25dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginBottom="2dp"-->
+        <!--            android:background="@drawable/badge_circle"-->
+        <!--            android:gravity="center"-->
+        <!--            android:textColor="@android:color/white"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/button_cd_nav_to_resolve_answers"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/button_cd_nav_to_resolve_answers"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/button_cd_nav_to_resolve_answers" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
